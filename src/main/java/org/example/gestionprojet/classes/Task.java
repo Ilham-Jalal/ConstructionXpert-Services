@@ -2,7 +2,7 @@ package org.example.gestionprojet.classes;
 
 import java.util.Date;
 
-public class Task {
+public class gitTask {
     private int id;
     private int projectId;
     private String description;
