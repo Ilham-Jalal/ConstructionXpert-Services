@@ -1,22 +1,8 @@
-
-<%--
-  Created by IntelliJ IDEA.
-  User: pc
-  Date: 20/05/2024
-  Time: 23:21
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title><%@ page import="java.util.List" %>
-        <%@ page import="classes.Project" %>
-        <%
-            List<Project> projects = (List<Project>) request.getAttribute("projects");
-        %>
-        <html>
-        <head>
-        <title>Projects</title>
+    <title>Projects</title>
 </head>
 <body>
 <h1>Projects</h1>
@@ -28,27 +14,28 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Budget</th>
+        <th>Actions</th>
     </tr>
-    <%
-        for (Project project : projects) {
-    %>
-    <tr>
-        <td><%= project.getId() %></td>
-        <td><%= project.getName() %></td>
-        <td><%= project.getDescription() %></td>
-        <td><%= project.getStartDate() %></td>
-        <td><%= project.getEndDate() %></td>
-        <td><%= project.getBudget() %></td>
-    </tr>
-    <%
-        }
-    %>
+    <c:forEach var="project" items="${projects}">
+        <tr>
+            <td>${project.id}</td>
+            <td>${project.name}</td>
+            <td>${project.description}</td>
+            <td>${project.startDate}</td>
+            <td>${project.endDate}</td>
+            <td>${project.budget}</td>
+            <td>
+                <form action="updateProject" method="get">
+                    <input type="hidden" name="id" value="${project.id}">
+                    <input type="submit" value="Update">
+                </form>
+                <form action="deleteProject" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');"> <!-- Formulaire pour le bouton de suppression -->
+                    <input type="hidden" name="id" value="${project.id}">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
 </table>
-</body>
-</html>
-</title>
-</head>
-<body>
-
 </body>
 </html>
