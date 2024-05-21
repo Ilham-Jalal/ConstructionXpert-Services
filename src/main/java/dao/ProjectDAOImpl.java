@@ -10,8 +10,13 @@ import java.util.List;
 public class ProjectDAOImpl implements ProjectDAO {
     private Connection connection;
 
-    public ProjectDAOImpl() throws SQLException, ClassNotFoundException {
-        connection = DBConnection.getConnection();
+    public ProjectDAOImpl() {
+        try {
+            connection = DBConnection.getConnection();
+        } catch (SQLException | ClassNotFoundException e) {
+            // Gestion des erreurs lors de la création de la connexion
+            throw new RuntimeException("Error initializing ProjectDAO", e);
+        }
     }
 
     @Override
@@ -69,6 +74,7 @@ public class ProjectDAOImpl implements ProjectDAO {
             stmt.executeUpdate();
         }
     }
+
     @Override
     public Project getProjectById(int projectId) throws SQLException {
         String query = "SELECT * FROM projects WHERE id = ?";

@@ -10,6 +10,17 @@ public class Project {
     private Date endDate;
     private double budget;
 
+    public Project(int id,String name, String description,Date startDate, Date endDate,double budget) {
+        this.id = id;
+        this.name=name;
+        this.startDate=startDate;
+        this.endDate=endDate;
+        this.budget=budget;
+    }
+
+    public Project() {
+
+    }
 
     public int getId() {
         return id;

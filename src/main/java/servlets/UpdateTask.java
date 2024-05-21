@@ -15,36 +15,38 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.List;
 
-@WebServlet("/tasks")
-public class TaskServlet extends HttpServlet {
+@WebServlet("/updateTask")
+public class UpdateTask extends HttpServlet {
     private TaskDAO taskDAO;
-    private ProjectDAO projectDAO;  // Add this line
+    private ProjectDAO projectDAO;
 
     @Override
-    public void init() {
+    public void init() throws ServletException {
+        super.init();
+        try {
             taskDAO = new TaskDAOImpl();
             projectDAO = new ProjectDAOImpl();
-
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new ServletException("Error initializing DAOs", e);
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int projectId = Integer.parseInt(req.getParameter("projectId"));
+        int taskId = Integer.parseInt(req.getParameter("taskId"));
         try {
-            List<Task> tasks = taskDAO.getTasksForProject(projectId);
-            req.setAttribute("tasks", tasks);
-            req.setAttribute("projectId", projectId);
-            req.getRequestDispatcher("WEB-INF/tasks.jsp").forward(req, resp);
+            Task task = taskDAO.getTaskById(taskId); // Assuming you have this method in your TaskDAO
+            req.setAttribute("task", task);
+            req.getRequestDispatcher("/WEB-INF/UpdateTask.jsp").forward(req, resp);
         } catch (SQLException e) {
-            throw new ServletException("Cannot retrieve tasks", e);
+            throw new ServletException("Error fetching task", e);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Add new task
+        int taskId = Integer.parseInt(req.getParameter("taskId"));
         int projectId = Integer.parseInt(req.getParameter("projectId"));
         String description = req.getParameter("description");
         Date startDate = Date.valueOf(req.getParameter("startDate"));
@@ -52,19 +54,25 @@ public class TaskServlet extends HttpServlet {
         String status = req.getParameter("status");
 
         Task task = new Task();
+        task.setId(taskId);
         task.setDescription(description);
         task.setStartDate(startDate);
         task.setEndDate(endDate);
         task.setStatus(status);
 
+        Project project;
         try {
-            Project project = projectDAO.getProjectById(projectId);  // Fetch the project
-            task.setProject(project);
+            project = projectDAO.getProjectById(projectId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        task.setProject(project);
 
-            taskDAO.addTask(task);
+        try {
+            taskDAO.updateTask(task);
             resp.sendRedirect("tasks?projectId=" + projectId);
         } catch (SQLException e) {
-            throw new ServletException("Cannot add task", e);
+            throw new ServletException("Error updating task", e);
         }
     }
 }

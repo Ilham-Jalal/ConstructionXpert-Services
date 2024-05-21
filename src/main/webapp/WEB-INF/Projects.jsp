@@ -29,9 +29,13 @@
                     <input type="hidden" name="id" value="${project.id}">
                     <input type="submit" value="Update">
                 </form>
-                <form action="deleteProject" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');"> <!-- Formulaire pour le bouton de suppression -->
+                <form action="deleteProject" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');">
                     <input type="hidden" name="id" value="${project.id}">
                     <input type="submit" value="Delete">
+                </form>
+                <form action="tasks" method="get">
+                    <input type="hidden" name="projectId" value="${project.id}">
+                    <input type="submit" value="View Tasks">
                 </form>
             </td>
         </tr>

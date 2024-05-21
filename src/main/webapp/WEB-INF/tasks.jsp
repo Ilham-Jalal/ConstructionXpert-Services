@@ -1,37 +1,44 @@
-<%@ page import="java.util.List" %>
-<%@ page import="classes.Task" %>
-<%
-    List<Task> tasks = (List<Task>) request.getAttribute("tasks");
-%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Tasks</title>
 </head>
 <body>
-<h1>Tasks</h1>
+<h1>Tasks for Project ${projectId}</h1>
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>Project ID</th>
         <th>Description</th>
         <th>Start Date</th>
         <th>End Date</th>
         <th>Status</th>
+        <th>Actions</th>
     </tr>
-    <%
-        for (Task task : tasks) {
-    %>
-    <tr>
-        <td><%= task.getId() %></td>
-        <td><%= task.getProject().getId() %></td>
-        <td><%= task.getDescription() %></td>
-        <td><%= task.getStartDate() %></td>
-        <td><%= task.getEndDate() %></td>
-        <td><%= task.getStatus() %></td>
-    </tr>
-    <%
-        }
-    %>
+    <c:forEach var="task" items="${tasks}">
+        <tr>
+            <td>${task.id}</td>
+            <td>${task.description}</td>
+            <td>${task.startDate}</td>
+            <td>${task.endDate}</td>
+            <td>${task.status}</td>
+            <td>
+                <form action="updateTask" method="get">
+                    <input type="hidden" name="id" value="${task.id}">
+                    <input type="submit" value="Update">
+                </form>
+                <form action="deleteTask" method="post" onsubmit="return confirm('Are you sure you want to delete this task?');">
+                    <input type="hidden" name="id" value="${task.id}">
+                    <input type="hidden" name="projectId" value="${projectId}">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
 </table>
+
+
+
+<a href="projects.jsp">Back to Projects</a>
 </body>
 </html>

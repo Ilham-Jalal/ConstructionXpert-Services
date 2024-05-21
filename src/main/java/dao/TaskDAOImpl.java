@@ -10,11 +10,16 @@ import java.util.List;
 
 public class TaskDAOImpl implements TaskDAO {
     private Connection connection;
-    private ProjectDAO projectDAO;  // Assume this DAO is available for fetching Project objects
+    private ProjectDAO projectDAO;
 
-    public TaskDAOImpl() throws SQLException, ClassNotFoundException {
-        connection = DBConnection.getConnection();
-        projectDAO = new ProjectDAOImpl();  // Initialize the ProjectDAO
+    public TaskDAOImpl() {
+        try {
+            connection = DBConnection.getConnection();
+            projectDAO = new ProjectDAOImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+
+            throw new RuntimeException("Error initializing TaskDAO", e);
+        }
     }
 
     @Override

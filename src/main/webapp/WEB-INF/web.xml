@@ -31,9 +31,6 @@
         <url-pattern>/updatePro</url-pattern>
     </servlet-mapping>
 
-
-
-
     <servlet>
             <servlet-name>TaskServlet</servlet-name>
             <servlet-class>servlets.TaskServlet</servlet-class>
@@ -42,6 +39,15 @@
             <servlet-name>TaskServlet</servlet-name>
             <url-pattern>/task</url-pattern>
         </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddTask</servlet-name>
+        <servlet-class>servlets.AddTask</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddTask</servlet-name>
+        <url-pattern>/aaddtask</url-pattern>
+    </servlet-mapping>
 
         <servlet>
             <servlet-name>ResourceServlet</servlet-name>

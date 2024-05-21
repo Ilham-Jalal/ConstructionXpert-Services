@@ -21,11 +21,9 @@ public class AddProject extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        try {
+
             projectDAO = new ProjectDAOImpl();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new ServletException(e);
-        }
+
     }
 
     @Override

@@ -19,62 +19,49 @@ public class UpdateProject extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        try {
+
+
             projectDAO = new ProjectDAOImpl();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new ServletException(e);
-        }
+
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idStr = req.getParameter("id");
         if (idStr != null) {
+            int id = Integer.parseInt(idStr);
+            Project project = null;
             try {
-                int id = Integer.parseInt(idStr);
-                Project project = projectDAO.getProjectById(id);
-                if (project != null) {
-                    req.setAttribute("project", project);
-                    req.getRequestDispatcher("/WEB-INF/updateProject.jsp").forward(req, resp);
-                } else {
-                    resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Project not found");
-                }
-            } catch (NumberFormatException | SQLException e) {
-                throw new ServletException(e);
+                project = projectDAO.getProjectById(id);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } else {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing project ID");
+            if (project != null) {
+                req.setAttribute("project", project);
+                req.getRequestDispatcher("/WEB-INF/updateProject.jsp").forward(req, resp);
+            } else {
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
         }
     }
 
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idStr = req.getParameter("id");
-        String name = req.getParameter("name");
-        String description = req.getParameter("description");
-        String startDateStr = req.getParameter("start_Date");
-        String endDateStr = req.getParameter("end_Date");
-        String budgetStr = req.getParameter("budget");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String description = request.getParameter("description");
+        Date startDate = Date.valueOf(request.getParameter("startDate"));
+        Date endDate = Date.valueOf(request.getParameter("endDate"));
+        double budget = Double.parseDouble(request.getParameter("budget"));
+
+        Project project = new Project(id, name, description, startDate, endDate, budget);
 
         try {
-            int id = Integer.parseInt(idStr);
-            Project project = projectDAO.getProjectById(id);
-            if (project != null) {
-                // Mettre à jour les attributs du projet
-                project.setName(name);
-                project.setDescription(description);
-                project.setStartDate(Date.valueOf(startDateStr));
-                project.setEndDate(Date.valueOf(endDateStr));
-                project.setBudget(Double.parseDouble(budgetStr));
-
-                projectDAO.updateProject(project);
-                resp.sendRedirect(req.getContextPath() + "/projects");
-            } else {
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Project not found");
-            }
-        } catch (NumberFormatException | SQLException e) {
-            throw new ServletException(e);
+            projectDAO.updateProject(project);
+            response.sendRedirect(request.getContextPath() + "/Projects/listProjects");
+        } catch (SQLException e) {
+            throw new ServletException("Error updating project", e);
         }
     }
 }
