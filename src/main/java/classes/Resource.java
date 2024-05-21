@@ -1,4 +1,4 @@
-package org.example.gestionprojet.classes;
+package classes;
 
 public class Resource {
     private int id;

@@ -1,6 +1,6 @@
-package org.example.gestionprojet.dao;
+package dao;
 
-import org.example.gestionprojet.classes.Project;
+import classes.Project;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,4 +10,5 @@ public interface ProjectDAO {
     List<Project> getAllProjects() throws SQLException;
     void updateProject(Project project) throws SQLException;
     void deleteProject(int projectId) throws SQLException;
+    Project getProjectById(int projectId) throws SQLException;
 }

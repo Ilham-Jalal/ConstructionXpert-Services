@@ -1,8 +1,7 @@
-package org.example.gestionprojet.dao;
+package dao;
 
-import com.example.gestionprojets.util.DBConnection;
-import org.example.gestionprojet.classes.Project;
-
+import classes.Project;
+import util.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
     @Override
     public void addProject(Project project) throws SQLException {
-        String query = "INSERT INTO projects (name, description, startDate, endDate, budget) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO projects (name, description, start_Date, end_Date, budget) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, project.getName());
             stmt.setString(2, project.getDescription());
@@ -39,8 +38,8 @@ public class ProjectDAOImpl implements ProjectDAO {
                 project.setId(rs.getInt("id"));
                 project.setName(rs.getString("name"));
                 project.setDescription(rs.getString("description"));
-                project.setStartDate(rs.getDate("startDate"));
-                project.setEndDate(rs.getDate("endDate"));
+                project.setStartDate(rs.getDate("start_Date"));
+                project.setEndDate(rs.getDate("end_Date"));
                 project.setBudget(rs.getDouble("budget"));
                 projects.add(project);
             }
@@ -69,5 +68,21 @@ public class ProjectDAOImpl implements ProjectDAO {
             stmt.setInt(1, projectId);
             stmt.executeUpdate();
         }
+    }
+    @Override
+    public Project getProjectById(int projectId) throws SQLException {
+        String query = "SELECT * FROM projects WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, projectId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Project project = new Project();
+                    project.setId(rs.getInt("id"));
+                    project.setName(rs.getString("name"));
+                    return project;
+                }
+            }
+        }
+        return null;
     }
 }

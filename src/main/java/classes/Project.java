@@ -1,28 +1,14 @@
-package org.example.gestionprojet.classes;
+package classes;
 
 import java.util.Date;
 
-public class gitTask {
+public class Project {
     private int id;
-    private int projectId;
+    private String name;
     private String description;
     private Date startDate;
     private Date endDate;
-    private String status;
-
-
-    public Task() {
-    }
-
-    public Task(int id, int projectId, String description, Date startDate, Date endDate, String status) {
-        this.id = id;
-        this.projectId = projectId;
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.status = status;
-    }
-
+    private double budget;
 
 
     public int getId() {
@@ -33,12 +19,12 @@ public class gitTask {
         this.id = id;
     }
 
-    public int getProjectId() {
-        return projectId;
+    public String getName() {
+        return name;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -65,11 +51,11 @@ public class gitTask {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
-        return status;
+    public double getBudget() {
+        return budget;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBudget(double budget) {
+        this.budget = budget;
     }
 }

@@ -1,6 +1,6 @@
-package org.example.gestionprojet.dao;
+package dao;
 
-import org.example.gestionprojet.classes.Task;
+import classes.Task;  // Correct import for your Task class
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,4 +11,3 @@ public interface TaskDAO {
     void updateTask(Task task) throws SQLException;
     void deleteTask(int taskId) throws SQLException;
 }
-

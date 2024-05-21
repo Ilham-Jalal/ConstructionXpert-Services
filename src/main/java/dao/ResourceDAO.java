@@ -1,6 +1,6 @@
-package org.example.gestionprojet.dao;
+package dao;
 
-import org.example.gestionprojet.classes.Resource;
+import classes.Resource;
 
 import java.sql.SQLException;
 import java.util.List;

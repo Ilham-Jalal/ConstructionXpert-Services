@@ -1,7 +1,8 @@
-package org.example.gestionprojet.dao;
+package dao;
 
-import com.example.gestionprojets.util.DBConnection;
-import org.example.gestionprojet.classes.Resource;
+import classes.Resource;
+import dao.ResourceDAO;
+import util.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
