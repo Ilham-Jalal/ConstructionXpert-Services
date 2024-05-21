@@ -26,8 +26,14 @@ public class AddTask extends HttpServlet {
         super.init();
 
 
+        try {
             taskDAO = new TaskDAOImpl();
-            projectDAO = new ProjectDAOImpl();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        projectDAO = new ProjectDAOImpl();
 
     }
 

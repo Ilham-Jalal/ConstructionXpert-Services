@@ -49,6 +49,15 @@
         <url-pattern>/aaddtask</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateTask</servlet-name>
+        <servlet-class>servlets.UpdateTask</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateTask</servlet-name>
+        <url-pattern>/updateT</url-pattern>
+    </servlet-mapping>
+
         <servlet>
             <servlet-name>ResourceServlet</servlet-name>
             <servlet-class>servlets.ResourceServlet</servlet-class>

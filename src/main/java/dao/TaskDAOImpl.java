@@ -12,14 +12,9 @@ public class TaskDAOImpl implements TaskDAO {
     private Connection connection;
     private ProjectDAO projectDAO;
 
-    public TaskDAOImpl() {
-        try {
-            connection = DBConnection.getConnection();
-            projectDAO = new ProjectDAOImpl();
-        } catch (SQLException | ClassNotFoundException e) {
-
-            throw new RuntimeException("Error initializing TaskDAO", e);
-        }
+    public TaskDAOImpl() throws SQLException, ClassNotFoundException {
+        connection = DBConnection.getConnection();
+        projectDAO = new ProjectDAOImpl();
     }
 
     @Override
@@ -56,6 +51,29 @@ public class TaskDAOImpl implements TaskDAO {
             }
         }
         return tasks;
+    }
+
+    @Override
+    public Task getTaskById(int taskId) throws SQLException {
+        String query = "SELECT * FROM tasks WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, taskId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Task task = new Task();
+                    task.setId(rs.getInt("id"));
+                    Project project = projectDAO.getProjectById(rs.getInt("project_id"));
+                    task.setProject(project);
+                    task.setDescription(rs.getString("description"));
+                    task.setStartDate(rs.getDate("start_date"));
+                    task.setEndDate(rs.getDate("end_date"));
+                    task.setStatus(rs.getString("status"));
+                    return task;
+                } else {
+                    throw new SQLException("Task not found");
+                }
+            }
+        }
     }
 
     @Override

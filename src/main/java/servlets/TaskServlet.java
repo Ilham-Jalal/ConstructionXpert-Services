@@ -24,11 +24,16 @@ public class TaskServlet extends HttpServlet {
 
     @Override
     public void init() {
+        try {
             taskDAO = new TaskDAOImpl();
-            projectDAO = new ProjectDAOImpl();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        projectDAO = new ProjectDAOImpl();
 
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int projectId = Integer.parseInt(req.getParameter("projectId"));
