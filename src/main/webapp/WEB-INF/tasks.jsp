@@ -27,11 +27,13 @@
                     <input type="hidden" name="id" value="${task.id}">
                     <input type="submit" value="Update">
                 </form>
-                <form action="deleteTask" method="post" onsubmit="return confirm('Are you sure you want to delete this task?');">
+                <form action="deleteTask" method="post">
                     <input type="hidden" name="id" value="${task.id}">
                     <input type="hidden" name="projectId" value="${projectId}">
-                    <input type="submit" value="Delete">
+                    <button type="submit">Delete Task</button>
                 </form>
+
+
             </td>
         </tr>
     </c:forEach>
@@ -39,6 +41,6 @@
 
 
 
-<a href="projects.jsp">Back to Projects</a>
+<a href="projects">Back to Projects</a>
 </body>
 </html>

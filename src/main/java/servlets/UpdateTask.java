@@ -37,10 +37,11 @@ public class UpdateTask extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String taskIdStr = req.getParameter("taskId");
+        String taskIdStr = req.getParameter("id");
         LOGGER.log(Level.INFO, "Received taskId: {0}", taskIdStr);
 
         if (taskIdStr == null || taskIdStr.isEmpty()) {
+            LOGGER.log(Level.SEVERE, "Missing or invalid taskId");
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing or invalid taskId");
             return;
         }
@@ -49,6 +50,7 @@ public class UpdateTask extends HttpServlet {
         try {
             taskId = Integer.parseInt(taskIdStr);
         } catch (NumberFormatException e) {
+            LOGGER.log(Level.SEVERE, "Invalid taskId format: {0}", taskIdStr);
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid taskId format");
             return;
         }
@@ -56,11 +58,12 @@ public class UpdateTask extends HttpServlet {
         try {
             Task task = taskDAO.getTaskById(taskId);
             if (task == null) {
+                LOGGER.log(Level.SEVERE, "Task not found for id: {0}", taskId);
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Task not found");
                 return;
             }
             req.setAttribute("task", task);
-            req.getRequestDispatcher("/WEB-INF/UpdateTask.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/updateTask.jsp").forward(req, resp);
         } catch (SQLException e) {
             throw new ServletException("Error fetching task", e);
         }
@@ -68,7 +71,7 @@ public class UpdateTask extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String taskIdStr = req.getParameter("taskId");
+        String taskIdStr = req.getParameter("id");
         String projectIdStr = req.getParameter("projectId");
         String description = req.getParameter("description");
         String startDateStr = req.getParameter("startDate");
@@ -93,11 +96,18 @@ public class UpdateTask extends HttpServlet {
         Date startDate;
         Date endDate;
 
+        try {
             taskId = Integer.parseInt(taskIdStr);
             projectId = Integer.parseInt(projectIdStr);
             startDate = Date.valueOf(startDateStr);
             endDate = Date.valueOf(endDateStr);
-
+        } catch (NumberFormatException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid format for taskId or projectId");
+            return;
+        } catch (IllegalArgumentException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid date format");
+            return;
+        }
 
         Task task = new Task();
         task.setId(taskId);

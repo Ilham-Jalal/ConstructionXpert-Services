@@ -27,15 +27,14 @@ public class DeleteProject extends HttpServlet {
         String idStr = req.getParameter("id");
 
         if (idStr != null) {
+
+            int id = Integer.parseInt(idStr);
             try {
-                int id = Integer.parseInt(idStr);
                 projectDAO.deleteProject(id);
-                resp.sendRedirect(req.getContextPath() + "/projects");
-            } catch (NumberFormatException | SQLException e) {
-                throw new ServletException(e);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } else {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing project ID");
+            resp.sendRedirect(req.getContextPath() + "/projects");
+
         }
-    }
-}
+    }}

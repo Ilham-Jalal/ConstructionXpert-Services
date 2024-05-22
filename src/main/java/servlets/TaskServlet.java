@@ -49,7 +49,7 @@ public class TaskServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Add new task
+
         int projectId = Integer.parseInt(req.getParameter("projectId"));
         String description = req.getParameter("description");
         Date startDate = Date.valueOf(req.getParameter("startDate"));

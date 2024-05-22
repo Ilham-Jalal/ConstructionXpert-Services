@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd48d05d-7284-462e-8b00-640f9282f36b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateTask.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/TaskServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/TaskServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +29,8 @@
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
-        <option value="Jsp File" />
         <option value="Servlet" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -68,7 +69,7 @@
     "Tomcat Server.Unnamed.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/gestion-Projet",
+    "last_opened_file_path": "C:/Users/user/Desktop/Megarama_BM",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -374,7 +375,7 @@
       <workItem from="1716235279062" duration="7011000" />
       <workItem from="1716281035847" duration="3377000" />
       <workItem from="1716284444249" duration="7852000" />
-      <workItem from="1716297870660" duration="12066000" />
+      <workItem from="1716297870660" duration="22863000" />
     </task>
     <servers />
   </component>
