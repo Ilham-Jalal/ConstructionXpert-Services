@@ -10,5 +10,6 @@ public interface ResourceDAO {
     List<Resource> getAllResources() throws SQLException;
     void updateResource(Resource resource) throws SQLException;
     void deleteResource(int resourceId) throws SQLException;
+    List<Resource> getResourcesByTaskId(int taskId) throws SQLException;
 }
 

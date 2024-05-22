@@ -32,15 +32,15 @@
                     <input type="hidden" name="projectId" value="${projectId}">
                     <button type="submit">Delete Task</button>
                 </form>
-
+                <form action="listResources" method="get">
+                    <input type="hidden" name="taskId" value="${taskId}">
+                    <button type="submit">View Resources</button>
+                </form>
 
             </td>
         </tr>
     </c:forEach>
 </table>
-
-
-
 <a href="projects">Back to Projects</a>
 </body>
 </html>

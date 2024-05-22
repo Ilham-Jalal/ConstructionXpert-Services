@@ -2,6 +2,7 @@ package classes;
 
 public class Resource {
     private int id;
+    private Task task;
     private String name;
     private String type;
     private int quantity;
@@ -24,6 +25,14 @@ public class Resource {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Task getTask() { // Ajout du getter pour task
+        return task;
+    }
+
+    public void setTask(Task task) { // Ajout du setter pour task
+        this.task = task;
     }
 
     public String getName() {

@@ -67,6 +67,23 @@
             <url-pattern>/resource</url-pattern>
         </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddResource</servlet-name>
+        <servlet-class>servlets.AddResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddResource</servlet-name>
+        <url-pattern>/addre</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateResource</servlet-name>
+        <servlet-class>servlets.UpdateResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateResource</servlet-name>
+        <url-pattern>/updat</url-pattern>
+    </servlet-mapping>
+
 
         <welcome-file-list>
             <welcome-file>index.jsp</welcome-file>

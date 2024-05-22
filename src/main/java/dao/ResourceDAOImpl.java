@@ -1,15 +1,20 @@
 package dao;
 
+import classes.Project;
 import classes.Resource;
-import dao.ResourceDAO;
+import classes.Task;
 import util.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ResourceDAOImpl implements ResourceDAO {
     private Connection connection;
+    TaskDAO taskDAO;
+    private static final Logger LOGGER = Logger.getLogger(ResourceDAOImpl.class.getName());
 
     public ResourceDAOImpl() throws SQLException, ClassNotFoundException {
         connection = DBConnection.getConnection();
@@ -25,8 +30,8 @@ public class ResourceDAOImpl implements ResourceDAO {
             stmt.setString(4, resource.getSupplierInfo());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-
+            LOGGER.log(Level.SEVERE, "Error adding resource", e);
+            throw e;
         }
     }
 
@@ -38,6 +43,7 @@ public class ResourceDAOImpl implements ResourceDAO {
              ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 Resource resource = new Resource();
+                Task task = taskDAO.getTaskById(rs.getInt("task_id"));
                 resource.setId(rs.getInt("id"));
                 resource.setName(rs.getString("name"));
                 resource.setType(rs.getString("type"));
@@ -46,8 +52,8 @@ public class ResourceDAOImpl implements ResourceDAO {
                 resources.add(resource);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-
+            LOGGER.log(Level.SEVERE, "Error retrieving all resources", e);
+            throw e;
         }
         return resources;
     }
@@ -63,7 +69,8 @@ public class ResourceDAOImpl implements ResourceDAO {
             stmt.setInt(5, resource.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error updating resource", e);
+            throw e;
         }
     }
 
@@ -74,8 +81,32 @@ public class ResourceDAOImpl implements ResourceDAO {
             stmt.setInt(1, resourceId);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-
+            LOGGER.log(Level.SEVERE, "Error deleting resource", e);
+            throw e;
         }
+    }
+
+    @Override
+    public List<Resource> getResourcesByTaskId(int taskId) throws SQLException {
+        List<Resource> taskResources = new ArrayList<>();
+        String query = "SELECT * FROM resources WHERE task_id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, taskId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Resource resource = new Resource();
+                    resource.setId(rs.getInt("id"));
+                    resource.setName(rs.getString("name"));
+                    resource.setType(rs.getString("type"));
+                    resource.setQuantity(rs.getInt("quantity"));
+                    resource.setSupplierInfo(rs.getString("supplier_info"));
+                    taskResources.add(resource);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error retrieving resources by task ID", e);
+            throw e;
+        }
+        return taskResources;
     }
 }
