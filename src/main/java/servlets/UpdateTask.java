@@ -124,7 +124,7 @@ public class UpdateTask extends HttpServlet {
             }
             task.setProject(project);
             taskDAO.updateTask(task);
-            resp.sendRedirect("tasks?projectId=" + projectId);
+            resp.sendRedirect("task?projectId=" + projectId);
         } catch (SQLException e) {
             throw new ServletException("Error updating task", e);
         }

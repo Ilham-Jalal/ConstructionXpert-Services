@@ -10,20 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd48d05d-7284-462e-8b00-640f9282f36b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/AddResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateResource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ResourceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ResourceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ResourceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ResourceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateResource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateResource.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,33 +62,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "Maven.gestion-projet [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.gestion-projet [org.apache.maven.plugins:maven-clean-plugin:3.2.0:help].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TomEE Server.TomEE 8.5.100.executor": "Run",
-    "TomEE Server.TomEE 8.5.99.executor": "Run",
-    "Tomcat Server.Tomcat 8.5.100.executor": "Run",
-    "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/Megarama_BM",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gestion-projet [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gestion-projet [org.apache.maven.plugins:maven-clean-plugin:3.2.0:help].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TomEE Server.TomEE 8.5.100.executor&quot;: &quot;Run&quot;,
+    &quot;TomEE Server.TomEE 8.5.99.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 8.5.100.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/gestion-Projet&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
   <component name="RunManager">
@@ -210,7 +215,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c39d1685-14ea-47a3-ab17-c2b0b3e8b0a5" />
+        <option name="BASE_DIRECTORY_NAME" value="0679de9c-223f-4c2d-a811-0c33c6b5246e" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -281,6 +286,7 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
+        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="gestion-Projet:war exploded" />
         </option>
@@ -382,7 +388,10 @@
       <workItem from="1716235279062" duration="7011000" />
       <workItem from="1716281035847" duration="3377000" />
       <workItem from="1716284444249" duration="7852000" />
-      <workItem from="1716297870660" duration="29178000" />
+      <workItem from="1716297870660" duration="36377000" />
+      <workItem from="1716392220613" duration="939000" />
+      <workItem from="1716393461889" duration="837000" />
+      <workItem from="1716394352215" duration="5399000" />
     </task>
     <servers />
   </component>

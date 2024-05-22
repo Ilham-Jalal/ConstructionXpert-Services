@@ -30,14 +30,14 @@ public class DeleteResource extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String resourceIdStr = req.getParameter("resourceId");
+        int resourceId = Integer.parseInt(req.getParameter("resourceId"));
+        int taskId = Integer.parseInt(req.getParameter("taskId"));
         try {
-            int resourceId = Integer.parseInt(resourceIdStr);
             resourceDAO.deleteResource(resourceId);
-            resp.sendRedirect("listResources");
-        } catch (NumberFormatException | SQLException e) {
+            resp.sendRedirect("listResources?taskId=" + taskId);
+        } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Error deleting resource", e);
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid resourceId");
+            throw new ServletException("Error deleting resource", e);
         }
     }
 }

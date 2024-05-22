@@ -1,6 +1,6 @@
 package dao;
 
-import classes.Project;
+
 import classes.Resource;
 import classes.Task;
 import util.DBConnection;
@@ -109,4 +109,28 @@ public class ResourceDAOImpl implements ResourceDAO {
         }
         return taskResources;
     }
+    @Override
+    public Resource getResourceById(int resourceId) throws SQLException {
+        String query = "SELECT * FROM resources WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, resourceId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Resource resource = new Resource();
+                    resource.setId(rs.getInt("id"));
+                    resource.setName(rs.getString("name"));
+                    resource.setType(rs.getString("type"));
+                    resource.setQuantity(rs.getInt("quantity"));
+                    resource.setSupplierInfo(rs.getString("supplier_info"));
+                    return resource;
+                } else {
+                    throw new SQLException("Resource not found for id: " + resourceId);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error retrieving resource by id", e);
+            throw e;
+        }
+    }
+
 }

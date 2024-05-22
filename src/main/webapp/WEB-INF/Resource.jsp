@@ -6,7 +6,7 @@
     <title>Liste des ressources</title>
 </head>
 <body>
-<h1>Liste des ressources</h1>
+<h1>Ressources pour la tâche ${param.taskId}</h1>
 <table border="1">
     <thead>
     <tr>
@@ -19,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="resource" items="${resources}">
+    <c:forEach var="resource" items="${taskResources}">
         <tr>
             <td>${resource.id}</td>
             <td>${resource.name}</td>
@@ -28,7 +28,7 @@
             <td>${resource.supplierInfo}</td>
             <td>
                 <a href="updateResource?resourceId=${resource.id}">Modifier</a>
-                <form action="deleteResource" method="post">
+                <form action="deleteResource" method="post" style="display:inline;">
                     <input type="hidden" name="resourceId" value="${resource.id}">
                     <button type="submit">Supprimer</button>
                 </form>
@@ -37,6 +37,6 @@
     </c:forEach>
     </tbody>
 </table>
-<a href="addResource">Ajouter une ressource</a>
+<a href="tasks?projectId=${projectId}">Retour aux tâches</a>
 </body>
 </html>

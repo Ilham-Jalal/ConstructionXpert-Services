@@ -88,7 +88,7 @@
     <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" />
     <div class="head">
         <a href="#">Home</a>
-        <a href="#">Our Projects</a>
+        <a href="http://localhost:8080/gestion_Projet_war_exploded/project">Our Projects</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
     </div>

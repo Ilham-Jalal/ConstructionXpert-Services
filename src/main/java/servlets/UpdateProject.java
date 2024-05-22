@@ -51,15 +51,15 @@ public class UpdateProject extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        Date startDate = Date.valueOf(request.getParameter("startDate"));
-        Date endDate = Date.valueOf(request.getParameter("endDate"));
+        Date startDate = Date.valueOf(request.getParameter("start_Date"));
+        Date endDate = Date.valueOf(request.getParameter("end_Date"));
         double budget = Double.parseDouble(request.getParameter("budget"));
 
         Project project = new Project(id, name, description, startDate, endDate, budget);
 
         try {
             projectDAO.updateProject(project);
-            response.sendRedirect(request.getContextPath() + "/Projects/listProjects");
+            response.sendRedirect(request.getContextPath() + "/project");
         } catch (SQLException e) {
             throw new ServletException("Error updating project", e);
         }

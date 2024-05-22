@@ -31,44 +31,53 @@ public class UpdateResource extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String resourceIdStr = req.getParameter("resourceId");
-        int resourceId;
-        try {
-            resourceId = Integer.parseInt(resourceIdStr);
-            Resource resource = resourceDAO.getAllResources().stream().filter(r -> r.getId() == resourceId).findFirst().orElse(null);
-            if (resource == null) {
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Resource not found");
-                return;
+        String resourceIdParam = req.getParameter("resourceId");
+
+        if (resourceIdParam != null && !resourceIdParam.isEmpty()) {
+            try {
+                int resourceId = Integer.parseInt(resourceIdParam);
+                Resource resource = resourceDAO.getResourceById(resourceId);
+                req.setAttribute("resource", resource);
+                req.getRequestDispatcher("/WEB-INF/UpdateResource.jsp").forward(req, resp);
+            } catch (NumberFormatException e) {
+                LOGGER.log(Level.SEVERE, "Invalid resourceId format: {0}", resourceIdParam);
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid resourceId format.");
+            } catch (SQLException e) {
+                throw new RuntimeException("Error retrieving resource", e);
             }
-            req.setAttribute("resource", resource);
-            req.getRequestDispatcher("/WEB-INF/UpdateResource.jsp").forward(req, resp);
-        } catch (NumberFormatException | SQLException e) {
-            LOGGER.log(Level.SEVERE, "Error fetching resource", e);
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid resourceId");
+        } else {
+            LOGGER.log(Level.SEVERE, "Missing or empty resourceId parameter");
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing or empty resourceId parameter.");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
-        String name = req.getParameter("name");
-        String type = req.getParameter("type");
-        int quantity = Integer.parseInt(req.getParameter("quantity"));
-        String supplierInfo = req.getParameter("supplierInfo");
 
-        Resource resource = new Resource();
-        resource.setId(id);
-        resource.setName(name);
-        resource.setType(type);
-        resource.setQuantity(quantity);
-        resource.setSupplierInfo(supplierInfo);
+            int idR = Integer.parseInt(req.getParameter("id"));
+            String name = req.getParameter("name");
+            String type = req.getParameter("type");
+            String quantityParam = req.getParameter("quantity");
+            String supplierInfo = req.getParameter("supplierInfo");
+            String taskId = req.getParameter("taskId");
 
-        try {
-            resourceDAO.updateResource(resource);
-            resp.sendRedirect("listResources");
-        } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Error updating resource", e);
-            throw new ServletException("Error updating resource", e);
+            if (quantityParam != null && !quantityParam.isEmpty()) {
+                int quantity = Integer.parseInt(quantityParam);
+
+                Resource resource = new Resource();
+                resource.setId(idR);
+                resource.setName(name);
+                resource.setType(type);
+                resource.setQuantity(quantity);
+                resource.setSupplierInfo(supplierInfo);
+
+
+                try {
+                    resourceDAO.updateResource(resource);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                resp.sendRedirect(req.getContextPath() + "/listResources?taskId=" + taskId);
+
+            }}
         }
-    }
-}
