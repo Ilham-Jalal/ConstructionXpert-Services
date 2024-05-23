@@ -36,6 +36,7 @@
                     <input type="hidden" name="taskId" value="${task.id}">
                     <button type="submit">View Resources</button>
                 </form>
+
             </td>
         </tr>
     </c:forEach>

@@ -28,9 +28,17 @@
             <td>${resource.supplierInfo}</td>
             <td>
                 <a href="updateResource?resourceId=${resource.id}">Modifier</a>
-                <form action="deleteResource" method="post" style="display:inline;">
+                <form action="${pageContext.request.contextPath}/deleteResource" method="post">
                     <input type="hidden" name="resourceId" value="${resource.id}">
-                    <button type="submit">Supprimer</button>
+                    <input type="hidden" name="taskId" value="${taskId}">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+
+
+
+                <form action="addResource" method="get">
+                    <input type="hidden" name="taskId" value="${taskId}">
+                    <button type="submit">Add Resource</button>
                 </form>
             </td>
         </tr>

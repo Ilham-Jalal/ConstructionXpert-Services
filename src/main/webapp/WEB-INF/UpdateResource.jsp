@@ -9,6 +9,7 @@
 <c:if test="${not empty resource}">
     <form action="${pageContext.request.contextPath}/updateResource" method="post">
         <input type="hidden" name="id" value="${resource.id}" />
+        <input type="hidden" name="taskId" value="${resource.task.id}" />
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="${resource.name}" required /><br />
 
