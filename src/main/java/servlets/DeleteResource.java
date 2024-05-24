@@ -29,14 +29,12 @@ public class DeleteResource extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int resourceId = Integer.parseInt(req.getParameter("resourceId"));
-        System.out.println("&");
+
 
         int taskId = Integer.parseInt(req.getParameter("taskId"));
-        System.out.println("&&");
+
 
         try {
-                System.out.println("&&&");
-
                 resourceDAO.deleteResource(resourceId);
             System.out.println("&&&&");
 

@@ -48,12 +48,14 @@ public class AddTask extends HttpServlet {
         Date startDate = Date.valueOf(request.getParameter("startDate"));
         Date endDate = Date.valueOf(request.getParameter("endDate"));
         String status = request.getParameter("status");
+        String picture = request.getParameter("picture");
 
         Task task = new Task();
         task.setDescription(description);
         task.setStartDate(startDate);
         task.setEndDate(endDate);
         task.setStatus(status);
+        task.setPicture(picture);
 
         Project project;
         try {

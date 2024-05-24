@@ -13,6 +13,7 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Status</th>
+        <th>Picture</th>
         <th>Actions</th>
     </tr>
     <c:forEach var="task" items="${tasks}">
@@ -22,21 +23,21 @@
             <td>${task.startDate}</td>
             <td>${task.endDate}</td>
             <td>${task.status}</td>
+            <td><img src="${task.picture}"  width="100"></td>
             <td>
-                <form action="updateTask" method="get">
+                <form action="updateTask" method="get" style="display:inline;">
                     <input type="hidden" name="id" value="${task.id}">
                     <input type="submit" value="Update">
                 </form>
-                <form action="deleteTask" method="post">
+                <form action="deleteTask" method="post" onsubmit="return confirm('Are you sure you want to delete this task?');" style="display:inline;">
                     <input type="hidden" name="id" value="${task.id}">
                     <input type="hidden" name="projectId" value="${projectId}">
                     <button type="submit">Delete Task</button>
                 </form>
-                <form action="listResources" method="get">
+                <form action="listResources" method="get" style="display:inline;">
                     <input type="hidden" name="taskId" value="${task.id}">
                     <button type="submit">View Resources</button>
                 </form>
-
             </td>
         </tr>
     </c:forEach>

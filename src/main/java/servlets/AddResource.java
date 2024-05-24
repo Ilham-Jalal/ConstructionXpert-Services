@@ -48,6 +48,7 @@ public class AddResource extends HttpServlet {
             String quantityParam = req.getParameter("quantity");
             String supplierInfo = req.getParameter("supplierInfo");
             String taskIdParam = req.getParameter("taskId");
+            String picture = req.getParameter("picture");
 
             if (name != null && !name.isEmpty() &&
                     type != null && !type.isEmpty() &&
@@ -62,6 +63,7 @@ public class AddResource extends HttpServlet {
                 resource.setType(type);
                 resource.setQuantity(quantity);
                 resource.setSupplierInfo(supplierInfo);
+                resource.setPicture(picture);
 
 
                     Task task = taskDAO.getTaskById(taskId);

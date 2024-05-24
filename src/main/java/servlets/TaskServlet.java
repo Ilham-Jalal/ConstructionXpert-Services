@@ -55,12 +55,14 @@ public class TaskServlet extends HttpServlet {
         Date startDate = Date.valueOf(req.getParameter("startDate"));
         Date endDate = Date.valueOf(req.getParameter("endDate"));
         String status = req.getParameter("status");
+        String picture =req.getParameter("picture");
 
         Task task = new Task();
         task.setDescription(description);
         task.setStartDate(startDate);
         task.setEndDate(endDate);
         task.setStatus(status);
+        task.setPicture(picture);
 
         try {
             Project project = projectDAO.getProjectById(projectId);  // Fetch the project

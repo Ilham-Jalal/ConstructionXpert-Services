@@ -11,15 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="bd48d05d-7284-462e-8b00-640f9282f36b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ResourceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ResourceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/TaskServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/TaskServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -389,7 +391,7 @@
       <workItem from="1716392220613" duration="939000" />
       <workItem from="1716393461889" duration="837000" />
       <workItem from="1716394352215" duration="19516000" />
-      <workItem from="1716472990551" duration="7661000" />
+      <workItem from="1716472990551" duration="19267000" />
     </task>
     <servers />
   </component>

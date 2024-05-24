@@ -18,13 +18,14 @@ public class ResourceDAOImpl implements ResourceDAO {
     }
     @Override
     public void addResource(Resource resource) throws SQLException {
-        String query = "INSERT INTO resources (name, type, quantity, supplier_info, task_id) VALUES (?, ?, ?, ?,?)";
+        String query = "INSERT INTO resources (name, type, quantity, supplier_info, task_id,picture) VALUES (?, ?, ?, ?,?,?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, resource.getName());
             stmt.setString(2, resource.getType());
             stmt.setInt(3, resource.getQuantity());
             stmt.setString(4, resource.getSupplierInfo());
             stmt.setInt(5,resource.getTask().getId());
+            stmt.setString(6,resource.getPicture());
 
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -47,6 +48,7 @@ public class ResourceDAOImpl implements ResourceDAO {
                 resource.setType(rs.getString("type"));
                 resource.setQuantity(rs.getInt("quantity"));
                 resource.setSupplierInfo(rs.getString("supplier_info"));
+                resource.setPicture(rs.getString("picture"));
                 resources.add(resource);
             }
         } catch (SQLException e) {
@@ -57,13 +59,14 @@ public class ResourceDAOImpl implements ResourceDAO {
     }
     @Override
     public void updateResource(Resource resource) throws SQLException {
-        String query = "UPDATE resources SET name = ?, type = ?, quantity = ?, supplier_info = ? WHERE id = ?";
+        String query = "UPDATE resources SET name = ?, type = ?, quantity = ?, supplier_info = ?,picture =? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, resource.getName());
             stmt.setString(2, resource.getType());
             stmt.setInt(3, resource.getQuantity());
             stmt.setString(4, resource.getSupplierInfo());
             stmt.setInt(5, resource.getId());
+            stmt.setString(6,resource.getPicture());
             stmt.executeUpdate();
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Error updating resource", e);
@@ -93,6 +96,7 @@ public class ResourceDAOImpl implements ResourceDAO {
                         resource.setType(rs.getString("type"));
                         resource.setQuantity(rs.getInt("quantity"));
                         resource.setSupplierInfo(rs.getString("supplier_info"));
+                        resource.setPicture(rs.getString("picture"));
                         taskResources.add(resource);
                     }
                 }
@@ -117,6 +121,7 @@ public class ResourceDAOImpl implements ResourceDAO {
                         resource.setType(rs.getString("type"));
                         resource.setQuantity(rs.getInt("quantity"));
                         resource.setSupplierInfo(rs.getString("supplier_info"));
+                        resource.setPicture(rs.getString("picture"));
                         return resource;
                     } else {
                         throw new SQLException("Resource not found for id: " + resourceId);

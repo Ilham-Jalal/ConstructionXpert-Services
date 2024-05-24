@@ -15,6 +15,7 @@
         <th>Type</th>
         <th>Quantité</th>
         <th>Informations sur le fournisseur</th>
+        <th>Picture</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -26,6 +27,7 @@
             <td>${resource.type}</td>
             <td>${resource.quantity}</td>
             <td>${resource.supplierInfo}</td>
+            <td><img src="${resource.picture}" alt="${resource.name}" width="100"></td>
             <td>
                 <a href="updateResource?resourceId=${resource.id}">Modifier</a>
                 <form action="deleteResource" method="post">
@@ -34,12 +36,13 @@
                     <button type="submit" class="delete-button">Delete</button>
                 </form>
 
-                <form action="addResource" method="get">
-                    <input type="hidden" name="taskId" value="${taskId}">
-                    <button type="submit">Add Resource</button>
-                </form>
+
             </td>
         </tr>
+        <form action="addResource" method="get">
+            <input type="hidden" name="taskId" value="${taskId}">
+            <button type="submit">Add Resource</button>
+        </form>
     </c:forEach>
     </tbody>
 </table>
