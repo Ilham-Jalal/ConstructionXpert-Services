@@ -2,6 +2,7 @@ package servlets;
 
 import dao.ResourceDAO;
 import dao.ResourceDAOImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 
 @WebServlet("/deleteResource")
 public class DeleteResource extends HttpServlet {
+
     private ResourceDAO resourceDAO;
 
     @Override
@@ -26,25 +28,21 @@ public class DeleteResource extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String resourceIdParam = req.getParameter("resourceId");
-        String taskIdParam = req.getParameter("taskId");
+        int resourceId = Integer.parseInt(req.getParameter("resourceId"));
+        System.out.println("&");
 
-        if (resourceIdParam != null && !resourceIdParam.isEmpty() && taskIdParam != null && !taskIdParam.isEmpty()) {
-            try {
-                int resourceId = Integer.parseInt(resourceIdParam);
-                int taskId = Integer.parseInt(taskIdParam);
+        int taskId = Integer.parseInt(req.getParameter("taskId"));
+        System.out.println("&&");
+
+        try {
+                System.out.println("&&&");
 
                 resourceDAO.deleteResource(resourceId);
+            System.out.println("&&&&");
 
                 resp.sendRedirect(req.getContextPath() + "/listResources?taskId=" + taskId);
             } catch (NumberFormatException | SQLException e) {
                 throw new ServletException("Error deleting resource", e);
             }
-        } else {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing or invalid parameters.");
-        }
     }
-
 }
-
-

@@ -14,6 +14,7 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Budget</th>
+        <th>Picture</th>
         <th>Actions</th>
     </tr>
     <c:forEach var="project" items="${projects}">
@@ -24,16 +25,17 @@
             <td>${project.startDate}</td>
             <td>${project.endDate}</td>
             <td>${project.budget}</td>
+            <td><img src="${project.picture}" alt="${project.name}" width="100"></td>
             <td>
-                <form action="updateProject" method="get">
+                <form action="updateProject" method="get" style="display:inline;">
                     <input type="hidden" name="id" value="${project.id}">
                     <input type="submit" value="Update">
                 </form>
-                <form action="deleteProject" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');">
+                <form action="deleteProject" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');" style="display:inline;">
                     <input type="hidden" name="id" value="${project.id}">
                     <input type="submit" value="Delete">
                 </form>
-                <form action="tasks" method="get">
+                <form action="tasks" method="get" style="display:inline;">
                     <input type="hidden" name="projectId" value="${project.id}">
                     <input type="submit" value="View Tasks">
                 </form>

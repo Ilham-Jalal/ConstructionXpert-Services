@@ -14,20 +14,20 @@ public class ProjectDAOImpl implements ProjectDAO {
         try {
             connection = DBConnection.getConnection();
         } catch (SQLException | ClassNotFoundException e) {
-            // Gestion des erreurs lors de la création de la connexion
             throw new RuntimeException("Error initializing ProjectDAO", e);
         }
     }
 
     @Override
     public void addProject(Project project) throws SQLException {
-        String query = "INSERT INTO projects (name, description, start_Date, end_Date, budget) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO projects (name, description, start_Date, end_Date, budget , picture) VALUES (?, ?, ?, ?, ?,?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, project.getName());
             stmt.setString(2, project.getDescription());
             stmt.setDate(3, new java.sql.Date(project.getStartDate().getTime()));
             stmt.setDate(4, new java.sql.Date(project.getEndDate().getTime()));
             stmt.setDouble(5, project.getBudget());
+            stmt.setString(6,project.getPicture());
             stmt.executeUpdate();
         }
     }
@@ -46,6 +46,7 @@ public class ProjectDAOImpl implements ProjectDAO {
                 project.setStartDate(rs.getDate("start_Date"));
                 project.setEndDate(rs.getDate("end_Date"));
                 project.setBudget(rs.getDouble("budget"));
+                project.setPicture(rs.getString("picture"));
                 projects.add(project);
             }
         }
@@ -54,7 +55,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
     @Override
     public void updateProject(Project project) throws SQLException {
-        String query = "UPDATE projects SET name = ?, description = ?, start_Date = ?, end_Date = ?, budget = ? WHERE id = ?";
+        String query = "UPDATE projects SET name = ?, description = ?, start_Date = ?, end_Date = ?, budget = ?, picture=? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, project.getName());
             stmt.setString(2, project.getDescription());
@@ -62,6 +63,7 @@ public class ProjectDAOImpl implements ProjectDAO {
             stmt.setDate(4, new Date(project.getEndDate().getTime()));
             stmt.setDouble(5, project.getBudget());
             stmt.setInt(6, project.getId());
+            stmt.setString(7,project.getPicture());
             stmt.executeUpdate();
         }
     }

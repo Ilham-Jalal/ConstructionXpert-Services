@@ -76,10 +76,8 @@ public class ResourceDAOImpl implements ResourceDAO {
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, resourceId);
             stmt.executeUpdate();
-        } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Error deleting resource", e);
-            throw e;
-        }}
+        }
+    }
 
         @Override
         public List<Resource> getResourcesByTaskId(int taskId) throws SQLException {

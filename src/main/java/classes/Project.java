@@ -9,17 +9,28 @@ public class Project {
     private Date startDate;
     private Date endDate;
     private double budget;
+    private String picture;
 
-    public Project(int id,String name, String description,Date startDate, Date endDate,double budget) {
+    public Project(int id, String name, String description, Date startDate, Date endDate,double budget, String picture) {
         this.id = id;
         this.name=name;
+        this.description=description;
         this.startDate=startDate;
         this.endDate=endDate;
         this.budget=budget;
+        this.picture=picture;
     }
 
     public Project() {
 
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public int getId() {

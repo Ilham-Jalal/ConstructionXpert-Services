@@ -31,8 +31,7 @@ public class ResourceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int taskIdStr = Integer.parseInt(req.getParameter("taskId"));
-        int taskId = Integer.parseInt(String.valueOf(taskIdStr));
+        int taskId = Integer.parseInt(req.getParameter("taskId"));
         List<Resource> taskResources ;
 
 
@@ -42,7 +41,9 @@ public class ResourceServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
+        req.setAttribute("taskId", taskId);
         req.setAttribute("taskResources", taskResources);
+
         req.getRequestDispatcher("/WEB-INF/Resource.jsp").forward(req, resp);
 
 

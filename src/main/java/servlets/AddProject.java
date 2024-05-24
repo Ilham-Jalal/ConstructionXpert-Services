@@ -38,6 +38,7 @@ public class AddProject extends HttpServlet {
         String startDateStr = req.getParameter("startDate");
         String endDateStr = req.getParameter("endDate");
         String budgetStr = req.getParameter("budget");
+        String picture = req.getParameter("picture");
 
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -51,6 +52,7 @@ public class AddProject extends HttpServlet {
             project.setStartDate(startDate);
             project.setEndDate(endDate);
             project.setBudget(budget);
+            project.setPicture(picture);
 
             projectDAO.addProject(project);
             resp.sendRedirect(req.getContextPath() + "/projects");

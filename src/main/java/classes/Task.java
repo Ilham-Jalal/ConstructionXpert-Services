@@ -9,18 +9,28 @@ public class Task {
     private Date startDate;
     private Date endDate;
     private String status;
+    private String picture;
 
-    public Task(int id, Project project, String description, Date startDate, Date endDate, String status) {
+    public Task(int id, Project project, String description, Date startDate, Date endDate,String status,String picture) {
         this.id = id;
         this.project=project;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
+        this.picture = picture;
     }
 
     public Task() {
 
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public int getId() {
