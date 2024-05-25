@@ -17,6 +17,8 @@
     <input type="date" id="endDate" name="endDate" required><br>
     <label for="budget">Budget :</label>
     <input type="number" step="0.01" id="budget" name="budget" required><br>
+    <label for="picture">Picture url :</label>
+    <input type="text"  id="picture" name="picture" required><br>
     <input type="submit" value="Ajouter le projet">
 </form>
 <a href="projects">Retour à la liste des projets</a>

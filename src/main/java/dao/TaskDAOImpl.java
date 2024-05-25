@@ -54,7 +54,6 @@ public class TaskDAOImpl implements TaskDAO {
         }
         return tasks;
     }
-
     @Override
     public Task getTaskById(int taskId) throws SQLException {
         String query = "SELECT * FROM tasks WHERE id = ?";

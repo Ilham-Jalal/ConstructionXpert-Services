@@ -13,6 +13,7 @@
     Start Date: <input type="date" name="startDate"><br>
     End Date: <input type="date" name="endDate"><br>
     Status: <input type="text" name="status"><br>
+    Picture url: <input type="text" name="picture">
     <input type="submit" value="Add Task">
 </form>
 </body>

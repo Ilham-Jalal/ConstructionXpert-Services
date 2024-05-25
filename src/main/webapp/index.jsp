@@ -4,6 +4,7 @@
 <head>
     <title>ConstructionXpert Services</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU0h5e8UpqIWh9M8UOxCpFPwwzxFw4xCP/z87" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +16,7 @@
             color: #333;
         }
         header {
-            background-color: rgba(215, 175, 238, 0.3);
+            background-color: rgb(91, 70, 103);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -28,7 +29,7 @@
             border-radius: 50%;
         }
         header a {
-            color: #130a0a;
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
             margin: 0 15px;
@@ -54,7 +55,7 @@
             margin: 20px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 8px 80px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 80px rgba(0, 0, 0, 8);
             text-align: center;
         }
         .accueil h1 {
@@ -205,6 +206,32 @@
             width: 30px;
             margin: 0 10px;
         }
+
+        /* hero swiper */
+        .swiper {
+            width: 100vw;
+            height: 100vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
     </style>
 </head>
 <body>
@@ -218,13 +245,57 @@
             <a href="#">Contact</a>
         </div>
     </header>
-    <div class="container">
-        <div class="accueil">
-            <h1>ConstructionXpert Services</h1>
-            <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
-            <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="" data-bs-ride="carousel">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                         style="background: url('https://img.freepik.com/photos-gratuite/parler-exterieur_1098-14924.jpg') center/100% no-repeat">
+                        <div class="container">
+                            <div class="accueil">
+                                <h1>ConstructionXpert Services</h1>
+                                <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
+                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"
+                         style="background: url('https://img.freepik.com/photos-premium/travailleur-architecte-ingenieur-professionnel-casque-protection-papier-plans-au-fond-chantier-construction-batiment-maison_293060-2783.jpg') center/100% no-repeat">
+
+                        <div class="container">
+                            <div class="accueil">
+                                <h1>ConstructionXpert Services</h1>
+                                <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
+                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"
+                         style="background: url('https://img.freepik.com/photos-premium/vue-travailleur-faisant-tomber-boites-carton_107420-41748.jpg') center/100% no-repeat">
+                        <div class="container">
+                            <div class="accueil">
+                                <h1>ConstructionXpert Services</h1>
+                                <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
+                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"
+                         style="background: url('https://img.freepik.com/photos-premium/portrait-responsable-entrepot-travailleurs-dans-entrepot_107420-13574.jpg') center/100% no-repeat">
+                        <div class="container">
+                            <div class="accueil">
+                                <h1>ConstructionXpert Services</h1>
+                                <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
+                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-    </div>
+    </section>
+
 </div>
 <div class="container1">
     <div class="who-are-we">
@@ -238,19 +309,19 @@
         <h2>Our missions</h2>
         <div class="mission-cards">
             <div class="mission-card">
-                <img src="https://pics.freeicons.io/uploads/icons/png/3881553121599996546-64.png" alt="Construction Icon">
+                <img src="1.png" alt="Construction Icon">
                 <p>Construction Gros Œuvre et Corps d'états secondaires</p>
             </div>
             <div class="mission-card">
-                <img src="https://pics.freeicons.io/uploads/icons/png/16650192161582800237-512.png" alt="Office Icon">
+                <img src="2.png" alt="Office Icon">
                 <p>Aménagement Plateaux bureaux</p>
             </div>
             <div class="mission-card">
-                <img src="https://pics.freeicons.io/uploads/icons/png/19278257331635490225-64.png" alt="Design and Build Icon">
+                <img src="3.png" alt="Design and Build Icon">
                 <p>Assistance Clé en Main - Design & Build</p>
             </div>
             <div class="mission-card">
-                <img src="https://pics.freeicons.io/uploads/icons/png/7431803701679394799-512.png" alt="Management Icon">
+                <img src="4.png" alt="Management Icon">
                 <p>Assistance Maîtrise d'ouvrage - OPC</p>
             </div>
         </div>
@@ -259,32 +330,34 @@
         <h2>Our values</h2>
         <div class="values">
             <div class="value-card">
-                <img src="https://i.imgur.com/ULZGRtY.png" alt="Ethics Icon">
+                <img src="Images/5.png" alt="Ethics Icon">
                 <h3>Ethics</h3>
                 <p>To highlight our professional attitudes at the service of our customers and partners in order to build a relationship of respect and trust.</p>
             </div>
             <div class="value-card">
-                <img src="https://i.imgur.com/4bVZJ3T.png" alt="Security Icon">
+                <img src="Images/6.png" width="60" alt="Security Icon">
                 <h3>Security</h3>
                 <p>To place our human capital at the centre of our concerns in order to guarantee the safety of all our employees. Continuous reflection on our plans for execution methods during structural works and finishes.</p>
             </div>
             <div class="value-card">
-                <img src="https://i.imgur.com/9N0I92Z.png" alt="Customer Satisfaction Icon">
+                <img src="Images/7.png" width="60" alt="Customer Satisfaction Icon">
                 <h3>Customer satisfaction</h3>
                 <p>The leitmotif of our mission: to create customer satisfaction throughout the project with tailor-made support. To be a force for innovative proposals adapted to the needs of our customers.</p>
             </div>
         </div>
     </div>
     <div class="footer">
-        <div class="row">
-            <div class="col-md-6 contact-info">
-                <h4>ConstructionXpert Services</h4>
+        <div class="foot" style="display: flex">
+            <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" style="height: 60px;border-radius: 50%;" />
+            <h4>ConstructionXpert Services</h4>
+            <p>Construction Services & Conseil is a general contractor for all trades authorised to support clients from the design to the completion of their projects.</p>
+            <div class=" contact-info">
                 <p>255, Boulevard Ghandi – Casablanca</p>
                 <p>+212 722923404</p>
                 <p>constructionxpert@gmail.com</p>
             </div>
             <div class="col-md-6">
-                <img src="https://i.imgur.com/V7RlHkL.png" alt="Company Logo" style="width: 100px;">
+
                 <div class="social-icons">
                     <a href="#"><img src="https://i.imgur.com/lTuA2XX.png" alt="Facebook"></a>
                     <a href="#"><img src="https://i.imgur.com/lTuA2XX.png" alt="LinkedIn"></a>
@@ -297,5 +370,24 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlI28/yhWlV74O3Ap64FAJc3mFzyHAoeA+mY4j1j7dChs2kXJgtO7CbhKWh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgMQC27ItQmI0C7+ds7z1TfQ/K4WcIOpyE5ZT9cu3D1sB6QN6wj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    // slide
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+
+        speed: 3000,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 2000,
+
+            disableOnInteraction: false,
+        },
+    });
+</script>
 </body>
 </html>
