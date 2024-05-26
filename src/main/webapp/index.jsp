@@ -55,6 +55,7 @@
             margin: 20px;
             padding: 20px;
             border-radius: 10px;
+            background-color: rgba(91, 70, 103, 0.46);
             box-shadow: 0 8px 80px rgba(0, 0, 0, 8);
             text-align: center;
         }
@@ -67,26 +68,9 @@
             color: #ffffff;
             margin-bottom: 20px;
         }
-        .home {
-            background-image: url("https://i.pinimg.com/564x/c8/32/be/c832beea0d9c6f4c696556aef686fcb6.jpg");
-            background-size: cover;
-        }
-        .accueil button {
-            background-color: #f8cd3f;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .accueil button a {
-            color: #130a0a;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .accueil button:hover {
-            background-color: #e0b829;
-        }
+
+
+
         .container1 {
             width: 80%;
             margin: 0 auto;
@@ -192,7 +176,9 @@
         }
         .footer {
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: rgba(91, 70, 103, 0.55);
+            box-shadow: 0 8px 80px rgba(0, 0, 0, 0.2);
+            border-top: 2px solid #130a0a;
             text-align: center;
         }
         .footer .contact-info {
@@ -230,8 +216,6 @@
             height: 100%;
             object-fit: cover;
         }
-
-
     </style>
 </head>
 <body>
@@ -241,8 +225,6 @@
         <div class="head">
             <a href="http://localhost:8080/gestion_Projet_war_exploded/">Home</a>
             <a href="http://localhost:8080/gestion_Projet_war_exploded/project">Our Projects</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
         </div>
     </header>
     <section id="hero">
@@ -250,43 +232,39 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"
-                         style="background: url('https://img.freepik.com/photos-gratuite/parler-exterieur_1098-14924.jpg') center/100% no-repeat">
+                         style="background: url('https://i.pinimg.com/564x/c8/32/be/c832beea0d9c6f4c696556aef686fcb6.jpg') center/100% no-repeat">
                         <div class="container">
                             <div class="accueil">
                                 <h1>ConstructionXpert Services</h1>
                                 <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
-                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide"
-                         style="background: url('https://img.freepik.com/photos-premium/travailleur-architecte-ingenieur-professionnel-casque-protection-papier-plans-au-fond-chantier-construction-batiment-maison_293060-2783.jpg') center/100% no-repeat">
+                         style="background: url('https://i.pinimg.com/564x/1d/d0/58/1dd058e33e089f1d0c527e7d1c8e9258.jpg') center/100% no-repeat">
 
                         <div class="container">
                             <div class="accueil">
                                 <h1>ConstructionXpert Services</h1>
                                 <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
-                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide"
-                         style="background: url('https://img.freepik.com/photos-premium/vue-travailleur-faisant-tomber-boites-carton_107420-41748.jpg') center/100% no-repeat">
+                         style="background: url('https://i.pinimg.com/474x/68/0e/e4/680ee4d36ba99d91204b742137d5b1bf.jpg') center/100% no-repeat">
                         <div class="container">
                             <div class="accueil">
                                 <h1>ConstructionXpert Services</h1>
                                 <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
-                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide"
-                         style="background: url('https://img.freepik.com/photos-premium/portrait-responsable-entrepot-travailleurs-dans-entrepot_107420-13574.jpg') center/100% no-repeat">
+                         style="background: url('https://i.pinimg.com/564x/1d/70/23/1d7023e18d6ad65a9741f16535d1d960.jpg') center/100% no-repeat ">
                         <div class="container">
                             <div class="accueil">
                                 <h1>ConstructionXpert Services</h1>
                                 <h4>This web application will allow the construction team to create and manage construction projects, assign tasks to team members, manage necessary resources, and track project and task details.</h4>
-                                <button><a href="http://localhost:8080/gestion_Projet_war_exploded/project">SEE OUR RECENT PROJECTS</a></button>
                             </div>
                         </div>
                     </div>
@@ -346,36 +324,15 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="foot" style="display: flex">
-            <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" style="height: 60px;border-radius: 50%;" />
-            <h4>ConstructionXpert Services</h4>
-            <p>Construction Services & Conseil is a general contractor for all trades authorised to support clients from the design to the completion of their projects.</p>
-            <div class=" contact-info">
-                <p>255, Boulevard Ghandi – Casablanca</p>
-                <p>+212 722923404</p>
-                <p>constructionxpert@gmail.com</p>
-            </div>
-            <div class="col-md-6">
 
-                <div class="social-icons">
-                    <a href="#"><img src="https://i.imgur.com/lTuA2XX.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://i.imgur.com/lTuA2XX.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="https://i.imgur.com/lTuA2XX.png" alt="Instagram"></a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlI28/yhWlV74O3Ap64FAJc3mFzyHAoeA+mY4j1j7dChs2kXJgtO7CbhKWh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgMQC27ItQmI0C7+ds7z1TfQ/K4WcIOpyE5ZT9cu3D1sB6QN6wj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-    // slide
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
-
         speed: 3000,
         loop: true,
         pagination: {
@@ -390,4 +347,28 @@
     });
 </script>
 </body>
+<div class="footer">
+    <div class="foot" style="display: flex">
+        <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" style="height: 60px;border-radius: 50%;" />
+        <h4>ConstructionXpert Services</h4>
+        <p>Construction Services & Conseil is a general contractor for all trades authorised to support clients from the design to the completion of their projects.</p>
+        <div class=" contact-info">
+            <div class="adress" style="display: flex">
+                <img src="Images/11197983181642744712-64.png" width="25">
+            <p>255, Boulevard Ghandi – Casablanca</p></div>
+            <div class="adress" style="display: flex">
+                <img src="Images/11816919591556274018-64.png" width="25"><p>+212 722923404</p></div>
+            <div class="adress" style="display: flex"> <img src="Images/17952689171595156226-512.png" width="25"><p>constructionxpert@gmail.com</p></div>
+
+        <div class="col-md-6" style="display: flex">
+
+            <div class="social-icons">
+                <a href="#"><img src="Images/facebook&.png" alt="Facebook"></a>
+                <a href="#"><img src="Images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="Images/9608604721530099615-64.png" alt="Instagram"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 </html>

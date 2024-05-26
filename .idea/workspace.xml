@@ -11,13 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bd48d05d-7284-462e-8b00-640f9282f36b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Capture d'écran 2024-03-05 100900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +31,9 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
         <option value="Jsp File" />
         <option value="Servlet" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -387,7 +388,7 @@
       <workItem from="1716392220613" duration="939000" />
       <workItem from="1716393461889" duration="837000" />
       <workItem from="1716394352215" duration="19516000" />
-      <workItem from="1716472990551" duration="27772000" />
+      <workItem from="1716472990551" duration="42361000" />
     </task>
     <servers />
   </component>
