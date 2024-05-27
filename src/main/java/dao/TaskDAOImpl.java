@@ -80,14 +80,14 @@ public class TaskDAOImpl implements TaskDAO {
 
     @Override
     public void updateTask(Task task) throws SQLException {
-        String query = "UPDATE tasks SET description = ?, start_date = ?, end_date = ?, status = ?,picture=? WHERE id = ?";
+        String query = "UPDATE tasks SET description = ?, start_date = ?, end_date = ?, status = ? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, task.getDescription());
             stmt.setDate(2, new java.sql.Date(task.getStartDate().getTime()));
             stmt.setDate(3, new java.sql.Date(task.getEndDate().getTime()));
             stmt.setString(4, task.getStatus());
             stmt.setInt(5, task.getId());
-            stmt.setString(6,task.getPicture());
+
             stmt.executeUpdate();
         }
     }

@@ -55,7 +55,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
     @Override
     public void updateProject(Project project) throws SQLException {
-        String query = "UPDATE projects SET name = ?, description = ?, start_Date = ?, end_Date = ?, budget = ?, picture=? WHERE id = ?";
+        String query = "UPDATE projects SET name = ?, description = ?, start_Date = ?, end_Date = ?, budget = ? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, project.getName());
             stmt.setString(2, project.getDescription());
@@ -63,7 +63,6 @@ public class ProjectDAOImpl implements ProjectDAO {
             stmt.setDate(4, new Date(project.getEndDate().getTime()));
             stmt.setDouble(5, project.getBudget());
             stmt.setInt(6, project.getId());
-            stmt.setString(7,project.getPicture());
             stmt.executeUpdate();
         }
     }

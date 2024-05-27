@@ -126,6 +126,22 @@
                 height: 100%;
                 object-fit: cover;
             }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .who-are-we {
+                margin: 20px;
+            }
+        }
+
+        .btn-group form {
+            margin-right: 10px;
+        }
+
+        .btn-group form:last-child {
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
@@ -189,17 +205,22 @@
 
                 <div class="who-are-we position-relative">
                     <img src="${project.picture}"  alt="${project.name}">
-
-                    <form action="tasks" method="get" class="position-absolute bottom-0 end-0 m-4">
+                    <form action="tasks" method="get" class="position-absolute bottom-0 end-0 m-4" >
                         <input type="hidden" name="projectId" value="${project.id}">
                         <button type="submit" class="btn btn-primary">View Tasks</button>
                     </form>
-                    <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-around; ">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.description}</p>
-                        <p class="card-text"><small class="text-muted">Start Date: ${project.startDate}</small></p>
-                        <p class="card-text"><small class="text-muted">End Date: ${project.endDate}</small></p>
-                        <p class="card-text"><strong>Budget: ${project.budget}</strong></p>
+                        <div class="dat" style="display: flex">
+                            <img src="Images/date.png" style="width: 10%">
+                        <p class="card-text"><small class="text-muted">Start Date: ${project.startDate}</small></p></div>
+                        <div class="dat" style="display: flex">
+                            <img src="Images/date.png" style="width: 10%">
+                        <p class="card-text"><small class="text-muted">End Date: ${project.endDate}</small></p></div>
+                        <div class="BUDGET" style="display: flex">
+                            <img src="Images/budget.png" style="width: 10%">
+                        <p class="card-text"><strong>Budget: ${project.budget}</strong></p></div>
                         <div class="btn-group" style="display: flex;justify-content: space-around">
 
                             <form action="updateProject" method="get">

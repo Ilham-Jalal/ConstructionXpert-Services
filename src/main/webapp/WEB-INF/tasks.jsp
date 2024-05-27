@@ -72,6 +72,20 @@
             color: #ffffff;
             margin-bottom: 20px;
         }
+        .who-are-we {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            border-radius: 1%;
+            border: 1px solid #f8cd3f;
+            text-align: center;
+        }
+        .who-are-we img {
+            width: 50%;
+            height: 90%;
+            border-radius: 1%;
+        }
         .footer {
             padding: 20px;
             background-color: rgba(91, 70, 103, 0.55);
@@ -113,10 +127,26 @@
             height: 100%;
             object-fit: cover;
         }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .who-are-we {
+                margin: 20px;
+            }
+        }
+
+        .btn-group form {
+            margin-right: 10px;
+        }
+
+        .btn-group form:last-child {
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
-<<header>
+<header>
     <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" />
     <div class="head">
         <a href="http://localhost:8080/gestion_Projet_war_exploded/">Home</a>
@@ -170,20 +200,28 @@
         </div>
     </div>
 </section>
-<div class="container">
+<div class="container" style="display: flex; flex-direction: column">
     <h1>Tasks for Project ${projectId}</h1>
     <div class="row">
         <c:forEach var="task" items="${tasks}">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="${task.picture}" class="card-img-top" alt="${task.description}">
-                    <div class="card-body">
+            <div class="col-md-6">
+                <div class="who-are-we position-relative">
+                    <img src="${task.picture}"  alt="${task.description}">
+                    <form action="listResources" method="get" class="position-absolute bottom-0 end-0 m-4">
+                        <input type="hidden" name="taskId" value="${task.id}">
+                        <button type="submit" class="btn btn-primary btn-sm">View Resources</button>
+                    </form>
+                    <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-around">
                         <h5 class="card-title" >Task ${task.id}</h5>
                         <p class="card-text">${task.description}</p>
-                        <p class="card-text"><small class="text-muted">Start Date: ${task.startDate}</small></p>
-                        <p class="card-text"><small class="text-muted">End Date: ${task.endDate}</small></p>
+                        <div class="dat" style="display: flex">
+                            <img src="Images/date.png" style="width: 10%">
+                        <p class="card-text"><small class="text-muted">Start Date: ${task.startDate}</small></p></div>
+                         <div class="dat" style="display: flex">
+                        <img src="Images/date.png" style="width: 10%">
+                        <p class="card-text"><small class="text-muted">End Date: ${task.endDate}</small></p></div>
                         <p class="card-text"><strong>Status: ${task.status}</strong></p>
-                        <div class="btn-group" role="group">
+                        <div class="btn-group" role="group" style="display: flex;justify-content: space-around">
                             <form action="updateTask" method="get">
                                 <input type="hidden" name="id" value="${task.id}">
                                 <input type="submit" value="Update" class="btn btn-warning btn-sm">
@@ -192,10 +230,6 @@
                                 <input type="hidden" name="id" value="${task.id}">
                                 <input type="hidden" name="projectId" value="${projectId}">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                            <form action="listResources" method="get">
-                                <input type="hidden" name="taskId" value="${task.id}">
-                                <button type="submit" class="btn btn-primary btn-sm">View Resources</button>
                             </form>
                         </div>
                     </div>

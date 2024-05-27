@@ -88,12 +88,12 @@
             text-align: center;
         }
         .who-are-we img {
-            width: 70%;
+            width: 50%;
             margin-right: 20px;
             border-radius: 8px;
         }
         .text {
-            width: 30%;
+            width:50%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -287,19 +287,19 @@
         <h2>Our missions</h2>
         <div class="mission-cards">
             <div class="mission-card">
-                <img src="1.png" alt="Construction Icon">
+                <img src="Images/1.png" alt="Construction Icon">
                 <p>Construction Gros Œuvre et Corps d'états secondaires</p>
             </div>
             <div class="mission-card">
-                <img src="2.png" alt="Office Icon">
+                <img src="Images/2.png" alt="Office Icon">
                 <p>Aménagement Plateaux bureaux</p>
             </div>
             <div class="mission-card">
-                <img src="3.png" alt="Design and Build Icon">
+                <img src="Images/3.png" alt="Design and Build Icon">
                 <p>Assistance Clé en Main - Design & Build</p>
             </div>
             <div class="mission-card">
-                <img src="4.png" alt="Management Icon">
+                <img src="Images/4.png" alt="Management Icon">
                 <p>Assistance Maîtrise d'ouvrage - OPC</p>
             </div>
         </div>

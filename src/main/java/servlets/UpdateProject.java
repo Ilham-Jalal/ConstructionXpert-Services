@@ -31,7 +31,7 @@ public class UpdateProject extends HttpServlet {
         String idStr = req.getParameter("id");
         if (idStr != null) {
             int id = Integer.parseInt(idStr);
-            Project project = null;
+            Project project ;
             try {
                 project = projectDAO.getProjectById(id);
             } catch (SQLException e) {
@@ -54,9 +54,8 @@ public class UpdateProject extends HttpServlet {
         Date startDate = Date.valueOf(request.getParameter("start_Date"));
         Date endDate = Date.valueOf(request.getParameter("end_Date"));
         double budget = Double.parseDouble(request.getParameter("budget"));
-        String picture = request.getParameter("picture");
 
-        Project project = new Project(id, name, description, startDate, endDate, budget,picture);
+        Project project = new Project(id, name, description, startDate, endDate, budget);
 
         try {
             projectDAO.updateProject(project);

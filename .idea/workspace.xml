@@ -10,13 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd48d05d-7284-462e-8b00-640f9282f36b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/OliveWorld.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConstructionXpert-main/.idea/ConstructionXpert-main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EX BASE DE DONNES/CRUD JAVA WITH MYSQL.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ma-recette-main/.idea/ma recette.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
@@ -66,6 +77,7 @@
     "Maven.gestion-projet [org.apache.maven.plugins:maven-clean-plugin:3.2.0:help].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TomEE Server.TomEE 8.5.100.executor": "Run",
     "TomEE Server.TomEE 8.5.99.executor": "Run",
     "Tomcat Server.Tomcat 8.5.100.executor": "Run",
@@ -388,7 +400,7 @@
       <workItem from="1716392220613" duration="939000" />
       <workItem from="1716393461889" duration="837000" />
       <workItem from="1716394352215" duration="19516000" />
-      <workItem from="1716472990551" duration="42361000" />
+      <workItem from="1716472990551" duration="55289000" />
     </task>
     <servers />
   </component>

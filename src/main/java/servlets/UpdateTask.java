@@ -77,7 +77,7 @@ public class UpdateTask extends HttpServlet {
         String startDateStr = req.getParameter("startDate");
         String endDateStr = req.getParameter("endDate");
         String status = req.getParameter("status");
-        String picture = req.getParameter("picture");
+
 
         LOGGER.log(Level.INFO, "Received parameters: taskId={0}, projectId={1}, description={2}, startDate={3}, endDate={4}, status={5}",
                 new Object[]{taskIdStr, projectIdStr, description, startDateStr, endDateStr, status});
@@ -116,7 +116,6 @@ public class UpdateTask extends HttpServlet {
         task.setStartDate(startDate);
         task.setEndDate(endDate);
         task.setStatus(status);
-        task.setPicture(picture);
 
         try {
             Project project = projectDAO.getProjectById(projectId);

@@ -21,11 +21,9 @@
     <label for="description">Description :</label>
     <input type="text" id="description" name="description" value="${project.description}" required><br>
     <label for="startDate">Date de début :</label>
-    <input type="date" id="startDate" name="start_Date" value=" ${project.startDate }" required><br>
+    <input type="date" id="startDate" name="start_Date" value="<%= startDate %>" required><br>
     <label for="endDate">Date de fin :</label>
-    <input type="date" id="endDate" name="end_Date" value="${project.endDate}" required><br>
-    <label for="picture">Picture url :</label>
-    <input type="text" id="picture" name="picture" value="${project.picture}" required><br>
+    <input type="date" id="endDate" name="end_Date" value="<%= endDate %>" required><br>
     <label for="budget">Budget :</label>
     <input type="number" step="0.01" id="budget" name="budget" value="${project.budget}" required><br>
     <input type="submit" value="Mettre à jour le projet">
