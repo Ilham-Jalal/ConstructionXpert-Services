@@ -212,14 +212,14 @@
                     <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-around; ">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.description}</p>
-                        <div class="dat" style="display: flex">
-                            <img src="Images/date.png" style="width: 10%">
+                        <div class="dat" style="display: flex;">
+                            <img src="Images/date.png" style="width: 5%">
                         <p class="card-text"><small class="text-muted">Start Date: ${project.startDate}</small></p></div>
                         <div class="dat" style="display: flex">
-                            <img src="Images/date.png" style="width: 10%">
+                            <img src="Images/date.png" style="width: 5%">
                         <p class="card-text"><small class="text-muted">End Date: ${project.endDate}</small></p></div>
                         <div class="BUDGET" style="display: flex">
-                            <img src="Images/budget.png" style="width: 10%">
+                            <img src="Images/budget.png" style="width: 5%">
                         <p class="card-text"><strong>Budget: ${project.budget}</strong></p></div>
                         <div class="btn-group" style="display: flex;justify-content: space-around">
 
@@ -233,7 +233,6 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </c:forEach>

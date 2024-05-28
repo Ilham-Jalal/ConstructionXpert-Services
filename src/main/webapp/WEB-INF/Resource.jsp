@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des ressources</title>
+    <title>Resource List</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -63,7 +63,6 @@
             background-color: rgb(91, 70, 103);
             color: white;
         }
-
         .footer {
             padding: 20px;
             background-color: rgba(91, 70, 103, 0.55);
@@ -90,19 +89,18 @@
         <a href="http://localhost:8080/gestion_Projet_war_exploded/">Home</a>
         <a href="http://localhost:8080/gestion_Projet_war_exploded/project">Our Projects</a>
         <a href="http://localhost:8080/gestion_Projet_war_exploded/addResource?taskId=${taskId}">Add Resource</a>
-
     </div>
 </header>
 <div class="container">
-    <h1>Ressources pour la tâche ${param.taskId}</h1>
+    <h1>Resources for Task ${param.taskId}</h1>
     <table>
         <thead>
         <tr>
             <th>ID</th>
-            <th>Nom</th>
+            <th>Name</th>
             <th>Type</th>
-            <th>Quantité</th>
-            <th>Informations sur le fournisseur</th>
+            <th>Quantity</th>
+            <th>Supplier Information</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -114,9 +112,8 @@
                 <td>${resource.type}</td>
                 <td>${resource.quantity}</td>
                 <td>${resource.supplierInfo}</td>
-
                 <td>
-                    <a href="updateResource?resourceId=${resource.id}" class="btn btn-warning btn-sm">Modifier</a>
+                    <a href="updateResource?resourceId=${resource.id}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="deleteResource" method="post" style="display: inline;">
                         <input type="hidden" name="resourceId" value="${resource.id}">
                         <input type="hidden" name="taskId" value="${taskId}">
@@ -127,22 +124,21 @@
         </c:forEach>
         </tbody>
     </table>
-
 </div>
 <div class="footer">
     <div class="foot" style="display: flex">
         <img src="https://i.pinimg.com/564x/1f/df/7a/1fdf7a2364b1eaabd6463b7473198df0.jpg" alt="Logo" style="height: 60px;border-radius: 50%;" />
         <h4>ConstructionXpert Services</h4>
-        <p>Construction Services & Conseil is a general contractor for all trades authorised to support clients from the design to the completion of their projects.</p>
+        <p>Construction Services & Conseil is a general contractor for all trades authorized to support clients from the design to the completion of their projects.</p>
         <div class="contact-info">
-            <div class="adress" style="display: flex">
+            <div class="address" style="display: flex">
                 <img src="Images/11197983181642744712-64.png" width="25">
                 <p>255, Boulevard Ghandi – Casablanca</p>
             </div>
-            <div class="adress" style="display: flex">
+            <div class="address" style="display: flex">
                 <img src="Images/11816919591556274018-64.png" width="25"><p>+212 722923404</p>
             </div>
-            <div class="adress" style="display: flex">
+            <div class="address" style="display: flex">
                 <img src="Images/17952689171595156226-512.png" width="25"><p>constructionxpert@gmail.com</p>
             </div>
             <div class="col-md-6" style="display: flex">

@@ -15,22 +15,12 @@
       <change afterPath="$PROJECT_DIR$/../EX BASE DE DONNES/CRUD JAVA WITH MYSQL.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ma-recette-main/.idea/ma recette.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ResourceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UpdateTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddResource.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddTask.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Projects.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Resource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateResource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateResource.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addProject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tasks.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateProject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateTask.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,7 +390,7 @@
       <workItem from="1716392220613" duration="939000" />
       <workItem from="1716393461889" duration="837000" />
       <workItem from="1716394352215" duration="19516000" />
-      <workItem from="1716472990551" duration="55289000" />
+      <workItem from="1716472990551" duration="66016000" />
     </task>
     <servers />
   </component>
